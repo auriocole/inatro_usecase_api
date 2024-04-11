@@ -1,5 +1,9 @@
 package api.inatro.inatro.repository;
 
-public interface vehicleRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import api.inatro.inatro.model.vehicle.vehicle;
+
+public interface vehicleRepository extends JpaRepository<vehicle, Long> {
     
 }

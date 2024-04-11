@@ -1,31 +1,24 @@
 package api.inatro.inatro.controller;
 
-import org.springframework.web.bind.annotation.RestController;
-
-import api.inatro.inatro.model.userModel.userModel;
+import api.inatro.inatro.model.user.user;
 import api.inatro.inatro.service.userService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
+@RequestMapping("users")
 public class userController {
 
     @Autowired
     private userService us;
 
-    @PostMapping("/cadastrar")
-    public ResponseEntity<?> cadastrar(@RequestBody userModel um){
-        return us.cadastrar(um);
-    }
-
-    @GetMapping("/")
-    public String rota(){
-        return "Inatro API";
+    @GetMapping("/listar")
+    public Iterable<user> listar(){
+        return us.listar();
     }
     
 }

@@ -1,4 +1,4 @@
-package api.inatro.inatro.model.userModel;
+package api.inatro.inatro.model.vehicle;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,18 +8,21 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
-@Table(name = "users")
+@Entity(name = "vehicles")
+@Table(name = "vehicles")
 @Getter
 @Setter
-public class userModel {
+public class vehicle {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String bi;
-    private String nome;
-    private String telefone;
-    private String email;
-    private String senha;
+    private String matricula;
+    private String proprietario;
+    private String marca; 
+    private String modelo;
+    private String ano;
+    private String cor;
+    private String estadoMatricula;
+    
 }
