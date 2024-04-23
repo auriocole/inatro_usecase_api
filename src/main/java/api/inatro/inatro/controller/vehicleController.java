@@ -5,10 +5,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import api.inatro.inatro.model.vehicle.responseVehicle;
 import api.inatro.inatro.model.vehicle.vehicle;
 import api.inatro.inatro.service.vehicleService;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,4 +39,9 @@ public class vehicleController {
         return vs.atualizar(v);
     }
     
+    @DeleteMapping("/remover/{codigo}")
+    public ResponseEntity<responseVehicle> remover(@PathVariable Long codigo){
+        return vs.remover(codigo);
+    }
+
 }

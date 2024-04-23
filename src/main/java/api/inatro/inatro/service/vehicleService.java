@@ -74,4 +74,11 @@ public class vehicleService {
             return new ResponseEntity<responseVehicle>(mensagem, HttpStatus.NOT_FOUND);
         }
     }
+
+    public ResponseEntity<responseVehicle> remover(Long codigo){
+        vr.deleteById(codigo);
+        mensagem.setMensagem("VEICULO REMOVIDO COM SUCESSO!");
+        return new ResponseEntity<responseVehicle>(mensagem, HttpStatus.OK); 
+    }
+
 }
